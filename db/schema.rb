@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_11_18_152401) do
+ActiveRecord::Schema[7.1].define(version: 2024_11_18_160446) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,10 +18,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_18_152401) do
     t.string "name"
     t.text "description"
     t.integer "price"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_arts_on_user_id"
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_arts_on_owner_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_18_152401) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "arts", "users"
+  add_foreign_key "arts", "users", column: "owner_id"
   add_foreign_key "bookings", "arts"
   add_foreign_key "bookings", "users"
 end
