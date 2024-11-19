@@ -3,6 +3,8 @@ class Art < ApplicationRecord
   has_many :users, through: :bookings
   belongs_to :artist
 
+  # has_one_attached :photo
+
   CATEGORY = ["painting", "photography", "ceramic", "statue", "tapestry"]
 
   validates :name, presence: true, length: { in: 2..30 }
