@@ -1,1 +1,7 @@
-<p>art index</p>
+<p>Arts list</p>
+
+<ul>
+  <% @arts.each do |art| %>
+    <li><%= link_to art.name, art_path %></li>
+  <% end %>
+</ul>
