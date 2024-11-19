@@ -1,8 +1,9 @@
 class ArtsController < ApplicationController
   def index
-    @Arts = Art.all
+    @arts = Art.all
   end
 
   def show
+
   end
 end
