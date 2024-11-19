@@ -1,45 +1,48 @@
-<div class="col-6">
-  <%# <% if list.photo.attached? ? %> %>
-    <%# <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %> %>
-  <%# <% else %> %>
-    <img src="../../assets/images/icones_images.png" alt="art-picture">
-  <%# <% end %> %>
-  <h1><%= @art.name %></h1>
-  <p><%= @art.description %></p>
-  <div class="characteristics">
-    <div class="line-info">
-      <p>Category: </p>
-      <p><%= @art.category%></p>
-    </div>
-    <div class="line-info">
-      <p>Artist: </p>
-      <p><%= @art.artist.name%></p>
-    </div>
-    <div class="line-info">
-      <p>Year: </p>
-      <p><%= @art.year%></p>
+<div class="d-flex">
+  <div class="col-6">
+    <%# <% if list.photo.attached? ? %>
+      <%# <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# <% else %>
+      <img src="../../assets/images/icones_images.png" alt="art-picture">
+    <%# <% end %>
+    <h1><%= @art.name %></h1>
+    <p><%= @art.description %></p>
+    <div class="characteristics">
+      <div class="line-info d-inline-flex">
+        <p>Category: </p>
+        <p><%= @art.category%></p>
+      </div>
+      <div class="line-info d-inline-flex">
+        <p>Artist: </p>
+        <p><%= @art.artist.name%></p>
+      </div>
+      <div class="line-info d-inline-flex">
+        <p>Year: </p>
+        <p><%= @art.year%></p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="col-6">
-  <div class="calendar" data-controller="datepicker">
+  <div class="col-6 d-flex flex-column">
+    <div class="calendar" data-controller="datepicker">
+    </div>
+      <div class="line-info d-inline-flex">
+      <p>Price per day: </p>
+      <p><%= @art.price%></p>
+    </div>
+      <div class="line-info d-inline-flex">
+      <p>Total price for the rental period: </p>
+      <p><%= @art.price%></p>
+    </div>
+      <div class="line-info d-inline-flex">
+      <p>Insurance: </p>
+      <p><%= @art.price * 0.66 %></p>
+    </div>
+      <div class="line-info d-inline-flex">
+      <p>Delivery: </p>
+      <p><%= @art.price * 0.10 %></p>
+    </div>
+    <%= link_to "Confirm", bookings_path %>
   </div>
-  <div class="line-info">
-    <p>Price per day: </p>
-    <p><%= @art.price%></p>
-  </div>
-  <div class="line-info">
-    <p>Total price for the rental period: </p>
-    <p><%= @art.price%></p>
-  </div>
-  <div class="line-info">
-    <p>Insurance: </p>
-    <p><%= @art.price * 0.66 %></p>
-  </div>
-  <div class="line-info">
-    <p>Delivery: </p>
-    <p><%= @art.price * 0.10 %></p>
-  </div>
-  <%= link_to "Confirm", bookings_path %>
+
 </div>
