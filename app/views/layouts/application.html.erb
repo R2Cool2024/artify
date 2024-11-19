@@ -16,13 +16,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-  
-    <div classe="container">
-    <header></header>
+
+    <header>
+      <%= render "layouts/navbar" %>
+    </header>
 
     <%= yield %>
-    
-    <footer></footer>
-    </div>
+
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
