@@ -6,4 +6,8 @@ class ArtsController < ApplicationController
   def show
 
   end
+
+  def show
+    @art = Art.find(params[:id])
+  end
 end
