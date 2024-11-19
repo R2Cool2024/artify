@@ -17,10 +17,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <header></header>
+    <header>
+      <%= render "layouts/navbar" %>
+    </header>
 
     <%= yield %>
 
-    <footer></footer>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
