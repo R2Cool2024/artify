@@ -1,1 +1,5 @@
-<p>art index</p>
+<p>Arts list</p>
+
+<% @arts.each do |art| %>
+  <%= render "arts/art_card" %>
+<% end %>
