@@ -1,9 +1,9 @@
 <div class="d-flex">
   <div class="col-6">
-    <%# <% if list.photo.attached? ? %>
+    <%# <% if list.photo.attached? %>
       <%# <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %>
     <%# <% else %>
-      <img src="../../assets/images/icones_images.png" alt="art-picture">
+      <%= image_tag "icone_images.png" %>
     <%# <% end %>
     <h1><%= @art.name %></h1>
     <p><%= @art.description %></p>
