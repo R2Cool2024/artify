@@ -1,7 +1,9 @@
-class User < ApplicationRecord
-  
+class User < ApplicationRecord  
   has_many :bookings
   has_many :arts, through: :bookings, foreign_key: :owner_id
+
+  has_one_attached :photo
+
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
