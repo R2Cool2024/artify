@@ -19,18 +19,30 @@ puts "create users"
 toto = User.create!(email: "toto@toto.com", password: "password")
 manu = User.create!(email: "manu@manu.com", password: "password")
 
-# art
-puts "create arts"
-art_fleur = Art.create!(name: "peinture fleur", description: "fleurs toile gouache 40X30", price: 50, owner: toto)
-art_statue = Art.create!(name: "statue fleur", description: "statue argile", price: 70, owner: toto)
-art_paysage = Art.create!(name: "peinture paysage", description: "paysage toile huile 40X30", price: 100, owner: toto)
+# artists
+picasso = Artist.new(name: "Pablo Picasso")
+pokemon = Artist.new(name: "Pokemon")
+rembrandt = Artist.new(name: "Rembrandt")
+monet = Artist.new(name: "Monet")
+jp_dupont = Artist.new(name: "Jean-Paul Dupont")
 
-art_maison = Art.create!(name: "peinture maison", description: "maisons toile gouache 40X30", price: 55, owner: manu)
-art_patchwork = Art.create!(name: "patchwork fleur", description: "patchwork tissu coloré", price: 75, owner: toto)
-art_portrait = Art.create!(name: "peinture portrait", description: "portrait toile huile 40X30", price: 101, owner: toto)
-art_pikachu = Art.create!(name: "pikachu statue", description: "pikachu argile", price: 73, owner: manu)
-art_salameche = Art.create!(name: "salameche statue", description: "salameche argile", price: 71, owner: manu)
-art_ronflex = Art.create!(name: "ronflex statue", description: "ronflex argile", price: 72, owner: manu)
+  # art
+puts "create arts"
+  # statue
+art_statue = Art.create!(name: "statue fleur", description: "statue argile", price: 70, year: 1876, category: "statue", artist: rembrandt, owner: toto)
+art_pikachu = Art.create!(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_salameche = Art.create!(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_ronflex = Art.create!(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
+# peintures
+art_fleur = Art.create!(name: "peinture fleur", description: "fleurs toile gouache 40X30", price: 50, year: 1876, category: "painting", artist: picasso, owner: toto)
+art_paysage = Art.create!(name: "peinture paysage", description: "paysage toile huile 40X30", price: 100, year: 1876, category: "painting", artist: rembrandt, owner: toto)
+art_maison = Art.create!(name: "peinture maison", description: "maisons toile gouache 40X30", price: 55, year: "1913", category: "painting", artist: monet, owner: manu)
+  # ceramique
+art_vase = Art.create!(name: "vase ceramique", description: "vase ceramique peint", price: 75,  year: 1876, category: "ceramic", artist: rembrandt, owner: toto)
+  # photo
+art_portrait = Art.create!(name: "autoportrait", description: "portrait photo noir&blanc 40X30", price: 101, year: 1876, category: "photography", artist: picasso, owner: toto)
+  # tapisserie
+art_tapis1 = Art.create!(name: "tapisserie rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
 
 # booking
 puts "create bookings"
