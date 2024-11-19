@@ -1,7 +1,5 @@
 <p>Arts list</p>
 
-<ul>
-  <% @arts.each do |art| %>
-    <li><%= link_to art.name, art_path(art) %></li>
-  <% end %>
-</ul>
+<% @arts.each do |art| %>
+  <%= render "arts/art_card" %>
+<% end %>

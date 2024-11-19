@@ -1,0 +1,13 @@
+<div class="row gap-3 p-20">
+
+  <% @arts.each do |art| %>
+
+    <div class="card-art m-10 col-2 p-2">
+      
+      <h2><%= link_to art.name, art_path(art) %></h2>
+      <h3><%= art.artist %></h2>
+        
+    </div>
+
+  <% end %>
+</div>
