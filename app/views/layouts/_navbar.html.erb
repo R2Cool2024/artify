@@ -13,7 +13,11 @@
             <%= link_to "Rent my art", new_art_path, class: "darkgreenbtn"%>
           </li>
           <li class="nav-item">
-            <%= link_to "My profile", user_path(current_user.id), class: "darkgreenbtn" %>
+            <% if current_user %>
+              <%= link_to "My profile", user_path(current_user.id), class: "darkgreenbtn" %>
+            <% else %>
+              <%= link_to "Log in", user_session_path, class: "darkgreenbtn" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
