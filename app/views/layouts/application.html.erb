@@ -32,14 +32,22 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <header>
-      <%= render "layouts/navbar" %>
-    </header>
+    <div class="app-container">
+      <header>
+        <%= render "layouts/navbar" %>
+      </header>
+    </div>
 
-    <%= yield %>
 
-    <footer>
-      <%= render "layouts/footer" %>
-    </footer>
+    <div class="app-container">
+      <%= yield %>
+    </div>
+
+    <div class="app-container">
+      <footer>
+        <%= render "layouts/footer" %>
+      </footer>
+    </div>
+
   </body>
 </html>
