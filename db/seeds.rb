@@ -12,7 +12,9 @@
 puts "clean data base"
 Booking.destroy_all
 Art.destroy_all
+Artist.destroy_all
 User.destroy_all
+
 
 # user
 puts "create users"
@@ -20,11 +22,11 @@ toto = User.create!(email: "toto@toto.com", password: "password")
 manu = User.create!(email: "manu@manu.com", password: "password")
 
 # artists
-picasso = Artist.new(name: "Pablo Picasso")
-pokemon = Artist.new(name: "Pokemon")
-rembrandt = Artist.new(name: "Rembrandt")
-monet = Artist.new(name: "Monet")
-jp_dupont = Artist.new(name: "Jean-Paul Dupont")
+picasso = Artist.create!(name: "Pablo Picasso")
+pokemon = Artist.create!(name: "Pokemon")
+rembrandt = Artist.create!(name: "Rembrandt")
+monet = Artist.create!(name: "Monet")
+jp_dupont = Artist.create!(name: "Jean-Paul Dupont")
 
   # art
 puts "create arts"
