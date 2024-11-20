@@ -1,2 +1,8 @@
 
-  <%= render "arts/art_card" %>
+<div class="all-card row gap-3 p-20">
+
+  <% @arts.each do |art| %>
+    <%= render "arts/art_card", art: art  %>
+  <% end %>
+
+</div>
