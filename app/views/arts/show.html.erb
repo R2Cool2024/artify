@@ -1,10 +1,10 @@
 <div class="d-flex">
   <div class="col-6">
-    <%# <% if list.photo.attached? %>
-      <%# <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %>
-    <%# <% else %>
+    <% if @art.photo.attached? %>
+       <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
       <%= image_tag "icone_images.png" %>
-    <%# <% end %>
+    <% end %>
     <h1><%= @art.name %></h1>
     <p><%= @art.description %></p>
     <div class="characteristics">
@@ -24,8 +24,11 @@
   </div>
 
   <div class="col-6 d-flex flex-column">
-    <div class="calendar" data-controller="datepicker">
-    </div>
+    <%= simple_form_for [@art, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+    <%# <div class="calendar" data-controller="datepicker">
+    </div> %>
       <div class="line-info d-inline-flex">
       <p>Price per day: </p>
       <p><%= @art.price%></p>
@@ -42,7 +45,7 @@
       <p>Delivery: </p>
       <p><%= @art.price * 0.10 %></p>
     </div>
-    <%= link_to "Confirm", bookings_path %>
-  </div>
-
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
 </div>
+

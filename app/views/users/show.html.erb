@@ -1,0 +1,19 @@
+<h1>view show user</h1>
+
+<div class="d-inline-flex justify-content-between">
+
+  <div class="col-4">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.key, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "icone_profil.png", alt: "profil-picture", width: 200, class: "rounded-circle" %>
+    <% end  %>
+  </div>
+
+  <div class="col-4 d-flex flex-column gap-5">
+    <%= link_to "My bookings", root_path, class: "btn btn-primary" %>
+    <%= link_to "My arwork for rent", root_path, class: "btn btn-primary" %>
+    <%= link_to "Add a new artwork for rent", root_path, class: "btn btn-primary" %>
+    <%= link_to "Manage rental requests", root_path, class: "btn btn-primary" %>
+  </div>
+</div>
