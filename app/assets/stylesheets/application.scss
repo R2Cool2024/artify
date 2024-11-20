@@ -10,3 +10,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/footer.scss";
+
+.darkgreenbtn {
+  background-color: #1a4441; /* Couleur de fond bleue */
+  color: #ffe7dc; /* Couleur du texte */
+  text-decoration: none;
+  border: none; /* Pas de bordure */
+  margin-right: 30px;
+  padding: 10px 20px; /* Espacement interne du bouton */
+  border-radius: 30px; /* Coins arrondis */
+  font-size: 16px; /* Taille de police */
+  font-family: barlow;
+
+}
