@@ -10,9 +10,9 @@
 
 # clean data base
 puts "clean data base"
-Artist.destroy_all
 Booking.destroy_all
 Art.destroy_all
+Artist.destroy_all
 User.destroy_all
 
 
