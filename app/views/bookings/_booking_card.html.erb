@@ -1,0 +1,19 @@
+<div class="all-card row gap-3 p-20">
+
+  <% @arts.each do |art| %>
+
+    <div class="card-art col-12 col-sm-3">
+
+      <div class="card-art-img"
+           style="background-image: url(<%= art.photo.attached? ? cl_image_path(art.photo.key) : asset_path('icone_images.png') %>)">
+      </div>
+
+      <div class="card-art-content">
+        <h3>by <%= art.artist.name %></h3>
+        <h2><%= link_to art.name.capitalize, art_path(art), class: 'card-art-title' %></h2>
+      </div>
+
+    </div>
+
+  <% end %>
+</div>
