@@ -1,4 +1,5 @@
 class ArtsController < ApplicationController
+
   def index
     @arts = Art.all
   end
@@ -26,7 +27,7 @@ class ArtsController < ApplicationController
     @art.year = art_params["year"].to_i
     @art.price = art_params["price"].to_i
     @art.photo = art_params["photo"]
-    @art.owner = User.last
+    @art.owner = current_user
     if @art.save!
       redirect_to art_path(@art)
     else
