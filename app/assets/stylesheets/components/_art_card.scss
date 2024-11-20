@@ -46,6 +46,7 @@
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   display: flex;
+  justify-content: space-between;
   border: 1px solid #afafaf40;
   padding: 0;
 }
@@ -85,7 +86,6 @@
     font-weight: 400;
     color: #1a4944;
     text-align: right;
-
   }
 
   h3 {
