@@ -5,7 +5,7 @@
       class="m-2 p-1 b-1"
       data-character-count-target="counterName"
     ></div>
-  <%= f.input :category, label: "Category", :collection => ["painting", "photography", "ceramic", "statue", "tapestry"], prompt: "Choose a category" %>
+  <%= f.input :category, label: "Category", :collection => Art::CATEGORY, prompt: "Choose a category" %>
   <%= f.input :description, label: "Description (Min. 10 char. , Max. 1000 char.)", placeholder: "Write a short description of your artwork", input_html: { "data-target": "character-count.text", "data-action": "keyup->character-count#updateCounter" } %>
   <div
       id="counter"
