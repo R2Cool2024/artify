@@ -9,6 +9,7 @@
 #   end
 
 # clean data base
+
 puts "clean data base"
 Booking.destroy_all
 Art.destroy_all
@@ -18,36 +19,77 @@ User.destroy_all
 
 # user
 puts "create users"
-toto = User.create!(email: "toto@toto.com", password: "password")
-manu = User.create!(email: "manu@manu.com", password: "password")
+toto = User.create!(email: "toto@toto.com", name: "toto", password: "pass1234toto")
+manu = User.create!(email: "manu@manu.com", name: "manu", password: "pass1234manu")
 
 # artists
+puts "create artists"
 picasso = Artist.create!(name: "Pablo Picasso")
 pokemon = Artist.create!(name: "Pokemon")
 rembrandt = Artist.create!(name: "Rembrandt")
 monet = Artist.create!(name: "Monet")
 jp_dupont = Artist.create!(name: "Jean-Paul Dupont")
+mathew_momoney = Artist.create!(name: "Mathew MoMoney")
 
-  # art
+# art
 puts "create arts"
-  # statue
-art_statue = Art.create!(name: "statue fleur", description: "statue argile", price: 70, year: 1876, category: "statue", artist: rembrandt, owner: toto)
-art_pikachu = Art.create!(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
-art_salameche = Art.create!(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
-art_ronflex = Art.create!(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
-# peintures
-art_fleur = Art.create!(name: "peinture fleur", description: "fleurs toile gouache 40X30", price: 50, year: 1876, category: "painting", artist: picasso, owner: toto)
-art_paysage = Art.create!(name: "peinture paysage", description: "paysage toile huile 40X30", price: 100, year: 1876, category: "painting", artist: rembrandt, owner: toto)
-art_maison = Art.create!(name: "peinture maison", description: "maisons toile gouache 40X30", price: 55, year: "1913", category: "painting", artist: monet, owner: manu)
-  # ceramique
-art_vase = Art.create!(name: "vase ceramique", description: "vase ceramique peint", price: 75,  year: 1876, category: "ceramic", artist: rembrandt, owner: toto)
-  # photo
-art_portrait = Art.create!(name: "autoportrait", description: "portrait photo noir&blanc 40X30", price: 101, year: 1876, category: "photography", artist: picasso, owner: toto)
-  # tapisserie
-art_tapis1 = Art.create!(name: "tapisserie rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
+# statue
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191302/statue_2_olycrk.jpg").open
+art_statue = Art.new(name: "statue angels", description: "statue argile", price: 700, year: 1876, category: "statue", artist: rembrandt, owner: toto)
+art_statue.photo.attach(io: file, filename: "art_statue.jpg", content_type: "image/jpg")
+art_statue.save
 
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200819/statue_picachu_qmmdal.jpg").open
+art_pikachu = Art.new(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_pikachu.photo.attach(io: file, filename: "art_pikachu.jpg", content_type: "image/jpg")
+art_pikachu.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200818/statue_Salamence_ztwwpu.jpg").open
+art_salameche = Art.new(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_salameche.photo.attach(io: file, filename: "art_salameche.jpg", content_type: "image/jpg")
+art_salameche.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201100/ronflex_c01wlm.jpg").open
+art_ronflex = Art.new(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_ronflex.photo.attach(io: file, filename: "art_ronflex.jpg", content_type: "image/jpg")
+art_ronflex.save
+
+# peintures
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191304/pexels_steve_peinture_2_-_Copie_h2q6fs.jpg").open
+art_fleur = Art.new(name: "peinture fleur", description: "fleurs toile gouache 40X30", price: 50, year: 1876, category: "painting", artist: picasso, owner: toto)
+art_fleur.photo.attach(io: file, filename: "art_fleur.jpg", content_type: "image/jpg")
+art_fleur.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/v1732190817/aaron_burden_photo_ndk6l3.jpg").open
+art_paysage = Art.new(name: "peinture paysage", description: "paysage toile huile 40X30", price: 100, year: 1876, category: "painting", artist: rembrandt, owner: toto)
+art_paysage.photo.attach(io: file, filename: "art_paysage.jpg", content_type: "image/jpg")
+art_paysage.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191303/pexels_steve_peinture_yfzwmc.jpg").open
+art_maison = Art.new(name: "peinture maison", description: "maisons toile gouache 40X30", price: 55, year: "1913", category: "painting", artist: monet, owner: manu)
+art_maison.photo.attach(io: file, filename: "art_maison.jpg", content_type: "image/jpg")
+art_maison.save
+# ceramique
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201348/ceramique_raku_f968lz.jpg").open
+art_vase = Art.new(name: "vase ceramique", description: "vase ceramique peint", price: 75,  year: 1876, category: "ceramic", artist: rembrandt, owner: toto)
+art_vase.photo.attach(io: file, filename: "art_vase.jpg", content_type: "image/jpg")
+art_vase.save
+# photo
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200820/nature_humaine_srdwcc.png").open
+art_portrait = Art.new(name: "Nature humaine", description: "Autoportrait contemporain groupe partial developpeurs fous 30X21", price: 400, year: 2024, category: "photography", artist: mathew_momoney, owner: toto)
+art_portrait.photo.attach(io: file, filename: "art_portrait.jpg", content_type: "image/jpg")
+art_portrait.save
+# tapisserie
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732190818/oladimeji_odunsi_photo_n9z0qf.jpg").open
+art_tapis = Art.new(name: "tapisserie rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
+art_tapis.photo.attach(io: file, filename: "art_tapis.jpg", content_type: "image/jpg")
+art_tapis.save
 # booking
 puts "create bookings"
-Booking.create!(art: art_fleur, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "to be confirmed" )
-Booking.create!(art: art_paysage, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
+Booking.create!(art: art_statue, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
+Booking.create!(art: art_paysage, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
 Booking.create!(art: art_ronflex, user: toto, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
