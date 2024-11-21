@@ -1,0 +1,36 @@
+<div class="card-owner-booking col-12 col-sm-3">
+
+  <div class="card-owner-booking-img"
+        style="background-image: url(<%= booking.photo.attached? ? cl_image_path(booking.photo.key) : asset_path('icone_images.png') %>)">
+  </div>
+
+  <div class="card-owner-booking-details">
+    <div class="card-owner-booking-content">
+      <p><%= booking.art.name%></p>
+      <p><%= booking.art.artist.name%></p>
+    </div>
+
+    <div class="card-owner-booking-content">
+      <div class="line-info d-inline-flex">
+        <p>Status: </p>
+        <p><%= booking.status%></p>
+      </div>
+
+      <div class="line-info d-inline-flex">
+        <p>Dates: </p>
+        <p>From <%= booking.start_date%> To <%= booking.end_date%></p>
+      </div>
+
+      <div class="line-info d-inline-flex">
+        <p>Total price: </p>
+        <p><%= booking.price * (end_date - start_date) %></p>
+      </div>
+    </div>
+
+    <%= link_to "Send a message", root_path, id: 'btn-send-msg' %>
+    <%= link_to "Decline", root_path, id: 'btn-decline' %> <!-- voir si on peut faire du stimulus pour masquer/afficher les 2 BP et avoir un seul partial -->
+    <%= link_to "Accept", root_path, id: 'btn-accept' %>
+
+  </div>
+
+</div>

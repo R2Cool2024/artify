@@ -1,0 +1,43 @@
+<div class="card-booking col-12 col-sm-3">
+
+  <div class="card-booking-img w-150 h-150"
+        style="background-image: url(<%= booking.art.photo.attached? ? cl_image_path(booking.art.photo.key) : asset_path('icone_images.png') %>)">
+  </div>
+
+  <div class="card-booking-details">
+
+    <div class="card-booking-content">
+      <p><%= booking.art.name%></p>
+      <p>Renter:</p>
+      <div class="card-booking-content-user">
+        <% if booking.user.photo.attached? %>
+          <%= cl_image_tag @booking.user.photo.key, height: 50, width: 50, crop: :fill %>
+        <% else %>
+          <%= image_tag "profil.png", alt: "profile picture", width: 50 %>
+        <% end %>
+        <p><%= booking.user.name%></p>
+      </div>
+    </div>
+
+    <div class="card-booking-content">
+      <div class="line-info d-inline-flex">
+        <p>Status: </p>
+        <p><%= booking.status%></p>
+      </div>
+
+      <div class="line-info d-inline-flex">
+        <p>Dates: </p>
+        <p><%= booking.start_date%> - <%= booking.end_date%></p>
+      </div>
+
+      <div class="line-info d-inline-flex">
+        <p>Total price: </p>
+        <p><%= booking.art.price * (booking.end_date - booking.start_date).to_i %> €</p>
+      </div>
+    </div>
+
+    <%= link_to "Send a message", root_path, id: 'btn-send-msg' %>
+
+  </div>
+
+</div>

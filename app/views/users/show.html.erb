@@ -6,14 +6,16 @@
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.key, height: 300, width: 400, crop: :fill %>
     <% else %>
-      <%= image_tag "icone_profil.png", alt: "profil-picture", width: 200, class: "rounded-circle" %>
+      <%= image_tag "profil.png", alt: "profil-picture", width: 200, class: "rounded-circle" %>
     <% end  %>
+
+    <p>current_user.name</p>
   </div>
 
   <div class="col-4 d-flex flex-column gap-5">
-    <%= link_to "My bookings", root_path, class: "btn btn-primary" %>
-    <%= link_to "My arwork for rent", root_path, class: "btn btn-primary" %>
+    <%= link_to "My bookings", bookings_path, class: "btn btn-primary" %>
+    <%= link_to "My arwork for rent", owner_arts_path, class: "btn btn-primary" %>
     <%= link_to "Add a new artwork for rent", new_art_path, class: "btn btn-primary" %>
-    <%= link_to "Manage rental requests", root_path, class: "btn btn-primary" %>
+    <%= link_to "Manage rental requests", owner_bookings_path, class: "btn btn-primary" %>
   </div>
 </div>
