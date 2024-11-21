@@ -1,16 +1,25 @@
-<div class="card-owner-booking col-12 col-sm-3">
+<div class="card-booking col-12 col-sm-3">
 
-  <div class="card-owner-booking-img"
-        style="background-image: url(<%= booking.photo.attached? ? cl_image_path(booking.photo.key) : asset_path('icone_images.png') %>)">
+  <div class="card-booking-img w-150 h-150"
+        style="background-image: url(<%= booking.art.photo.attached? ? cl_image_path(booking.art.photo.key) : asset_path('icone_images.png') %>)">
   </div>
 
-  <div class="card-owner-booking-details">
-    <div class="card-owner-booking-content">
+  <div class="card-booking-details">
+
+    <div class="card-booking-content">
       <p><%= booking.art.name%></p>
-      <p><%= booking.art.artist.name%></p>
+      <p>Renter:</p>
+      <div class="card-booking-content-user">
+        <% if booking.user.photo.attached? %>
+          <%= cl_image_tag @booking.user.photo.key, height: 50, width: 50, crop: :fill %>
+        <% else %>
+          <%= image_tag "profil.png", alt: "profile picture", width: 50 %>
+        <% end %>
+        <p><%= booking.user.name%></p>
+      </div>
     </div>
 
-    <div class="card-owner-booking-content">
+    <div class="card-booking-content">
       <div class="line-info d-inline-flex">
         <p>Status: </p>
         <p><%= booking.status%></p>
@@ -18,18 +27,23 @@
 
       <div class="line-info d-inline-flex">
         <p>Dates: </p>
-        <p>From <%= booking.start_date%> To <%= booking.end_date%></p>
+        <p><%= booking.start_date%> - <%= booking.end_date%></p>
       </div>
 
       <div class="line-info d-inline-flex">
         <p>Total price: </p>
-        <p><%= booking.price * (end_date - start_date) %></p>
+        <p><%= booking.art.price * (booking.end_date - booking.start_date).to_i %> €</p>
       </div>
     </div>
 
     <%= link_to "Send a message", root_path, id: 'btn-send-msg' %>
-    <%= link_to "Decline", root_path, id: 'btn-decline' %> <!-- voir si on peut faire du stimulus pour masquer/afficher les 2 BP et avoir un seul partial -->
-    <%= link_to "Accept", root_path, id: 'btn-accept' %>
+    <%= link_to "Confirm", root_path, id: 'btn-confirm' %>
+    <%= link_to "Declin", root_path, id: 'btn-decline' %>
+
+    <%# <%= simple_form_for(booking) do |f| %> %>
+      <%# <%= f.input :status, class:"d-none", data: { "status": "confirm"}, as: :file %> %>
+      <%# <%= f.submit %> %>
+    <%# <% end %> %>
 
   </div>
 

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   namespace :owner do
     resources :bookings, only: ["index"]
+    patch "bookings/:id", to: "bookings#update", as: "update_booking"
     resources :arts, only: ["index"]
   end
 
