@@ -1,19 +1,35 @@
-<h1>view show user</h1>
+<div class="user-show-content">
 
-<div class="d-inline-flex justify-content-between">
-
-  <div class="col-4">
+  <div class="user-profile col-5">
     <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag current_user.key, crop: :fill, class: "user-profile-picture" %>
     <% else %>
-      <%= image_tag "icone_profil.png", alt: "profil-picture", width: 200, class: "rounded-circle" %>
+      <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
     <% end  %>
+    <h1>current_user.name</h1>
   </div>
 
-  <div class="col-4 d-flex flex-column gap-5">
-    <%= link_to "My bookings", root_path, class: "btn btn-primary" %>
-    <%= link_to "My arwork for rent", root_path, class: "btn btn-primary" %>
-    <%= link_to "Add a new artwork for rent", new_art_path, class: "btn btn-primary" %>
-    <%= link_to "Manage rental requests", root_path, class: "btn btn-primary" %>
+
+  <div class="col-7 gap-5">
+
+    <div class="lightgreen_link">
+        <%= link_to "My bookings", bookings_path, class: "profile_link_txt" %>
+        <p class="profile_link_arrow">▶</p>
+    </div>
+
+    <div class="lightpink_link">
+      <%= link_to "My arwork for rent", owner_arts_path, class: "profile_link_txt" %>
+      <p class="profile_link_arrow">▶</p>
+    </div>
+
+    <div class="lightpink_link">
+      <%= link_to "Add a new artwork for rent", new_art_path, class: "profile_link_txt" %>
+      <p class="profile_link_arrow">▶</p>
+    </div>
+
+    <div class="lightpink_link">
+      <%= link_to "Manage rental requests", owner_bookings_path, class: "profile_link_txt" %>
+      <p class="profile_link_arrow">▶</p>
+    </div>
   </div>
 </div>
