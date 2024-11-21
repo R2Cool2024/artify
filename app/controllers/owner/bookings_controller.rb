@@ -4,10 +4,17 @@ class Owner::BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def update
-    raise
-    @booking = Restaurant.find(params[:id])
-    @booking.update(params[:booking])
+  def updateDecline
+    @booking = Booking.find(params[:id])
+    @booking.status = Booking::STATUS[1]
+    @booking.save!
+    redirect_to owner_bookings_path
   end
 
+  def updateConfirm
+    @booking = Booking.find(params[:id])
+    @booking.status = Booking::STATUS[2]
+    @booking.save!
+    redirect_to owner_bookings_path
+  end
 end
