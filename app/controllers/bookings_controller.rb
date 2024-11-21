@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_art, only: [:create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.joins(:art).where(art: { owner: current_user })
   end
 
   def create
