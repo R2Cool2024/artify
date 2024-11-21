@@ -18,8 +18,8 @@ User.destroy_all
 
 # user
 puts "create users"
-toto = User.create!(email: "toto@toto.com", password: "password")
-manu = User.create!(email: "manu@manu.com", password: "password")
+toto = User.create!(email: "toto@toto.com", password: "password", name: "Toto")
+manu = User.create!(email: "manu@manu.com", password: "password", name: "Manu")
 
 # artists
 picasso = Artist.create!(name: "Pablo Picasso")
