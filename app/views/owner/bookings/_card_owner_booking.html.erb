@@ -28,7 +28,7 @@
     </div>
 
     <%= link_to "Send a message", root_path, id: 'btn-send-msg' %>
-    <%= link_to "Decline", root_path, id: 'btn-decline' %> <!-- voir si on peut faire du stimulus pour masquer/afficher les 2 BP et avoir un seul partial -->
+    <%= link_to "Decline", update_path(booking), id: 'btn-decline' %> <!-- voir si on peut faire du stimulus pour masquer/afficher les 2 BP et avoir un seul partial -->
     <%= link_to "Accept", root_path, id: 'btn-accept' %>
 
   </div>
