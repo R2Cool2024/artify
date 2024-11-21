@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :bookings, only: ["create"]
   end
 
+  resources :bookings, only: ["index"]
+  
+
   namespace :owner do
     resources :bookings, only: ["index"]
     resources :arts, only: ["index"]
