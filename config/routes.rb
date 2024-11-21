@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   end
 
   namespace :owner do
+    get 'arts/index'
     resources :bookings, only: ["index"]
+    resources :arts, only: ["index"]
   end
 
   resources :users, only: ["show"]
