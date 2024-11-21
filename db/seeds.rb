@@ -19,11 +19,19 @@ User.destroy_all
 
 # user
 puts "create users"
-toto = User.create!(email: "toto@toto.com", name: "toto", password: "pass1234toto")
-manu = User.create!(email: "manu@manu.com", name: "manu", password: "pass1234manu")
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1732205716/nora_profile_lykcsp.jpg").open
+toto = User.new(email: "toto@toto.com", name: "toto", password: "pass1234toto")
+toto.photo.attach(io: file, filename: "nora.jpg", content_type: "image/jpg")
+toto.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1732205347/camille_q5cbjy.jpg").open
+manu = User.new(email: "manu@manu.com", name: "manu", password: "pass1234manu")
+manu.photo.attach(io: file, filename: "manue.jpg", content_type: "image/jpg")
+manu.save
 
 # artists
 puts "create artists"
+
 picasso = Artist.create!(name: "Pablo Picasso")
 pokemon = Artist.create!(name: "Pokemon")
 rembrandt = Artist.create!(name: "Rembrandt")
