@@ -7,6 +7,7 @@ export default class extends Controller {
     // TODO: console.log something!
     console.log("connect ok");
     this.counterTarget.innerText = `0 character`;
+    this.counterNameTarget.innerText = `0 character`;
   }
 
   updateCounter() {
