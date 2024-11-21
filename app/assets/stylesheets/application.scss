@@ -12,15 +12,22 @@
 @import "pages/index";
 @import "components/footer.scss";
 
-.darkgreenbtn {
-  background-color: #1a4441; /* Couleur de fond bleue */
-  color: #ffe7dc; /* Couleur du texte */
-  text-decoration: none;
-  border: none; /* Pas de bordure */
-  margin-right: 30px;
-  padding: 10px 20px; /* Espacement interne du bouton */
-  border-radius: 30px; /* Coins arrondis */
-  font-size: 16px; /* Taille de police */
-  font-family: barlow;
+// Sélectionne le container principal des pages (ne comprend ni la navbar, ni le footer)
+.main-container {
+  padding-left: 20px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: $body-font;
 
+  h1 {
+    color: $dark-green;
+    font-size: 30px;
+    font-weight: 600;
+  }
 }
+
+// Pour sélectionner le body de n'importe quelle view
+// Example: view index(action name) de arts(controller name)
+// .arts.index {
+//   }

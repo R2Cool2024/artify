@@ -1,17 +1,4 @@
 // Import page-specific CSS files here.
 @import "home";
-
-
-.all-card {
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
-}
-
-.all-card:last-child {
-  align-self: flex-start;
-}
-
-body{
-  background-color: white;
-}
+@import "art_new";
+@import "user_show";

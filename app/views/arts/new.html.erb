@@ -1,15 +1,25 @@
-<%= simple_form_for(@art, data: { controller: "character-count" }) do |f| %>
-  <%= f.input :name, label: "Name (Min. 2 char.)" %>
-  <%= f.input :category, :collection => ["painting", "photography", "ceramic", "statue", "tapestry"] %>
-  <%= f.input :description, label: "Description (Min. 10 char.)", input_html: { data_character_count_target: "text", data_action: "keyup->character-count#updateCounter" } %>
-  <%# <div
-      id="counter"
-      class="m-2 p-1 b-1"
-      data-character-count-target="counter"
-    ></div> %>
-  <%= f.input :year %>
-  <%= f.input :artist, :collection => Artist.all %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="art-new-content">
+
+  <div class="art-new-title col-12 col-md-4">
+    <h1>Add a new artwork for rent</h1>
+  </div>
+
+  <div id="art-new-form" class="form col-12 col-md-8 ">
+    <%= simple_form_for(@art, data: { controller: "character-count" }) do |f| %>
+      <%= f.input :name, label: "Name (Min. 2 char.)" %>
+      <%= f.input :category, :collection => ["painting", "photography", "ceramic", "statue", "tapestry"] %>
+      <%= f.input :description, label: "Description (Min. 10 char.)", input_html: { data_character_count_target: "text", data_action: "keyup->character-count#updateCounter" } %>
+      <%# <div
+          id="counter"
+          class="m-2 p-1 b-1"
+          data-character-count-target="counter"
+        ></div %>
+      <%= f.input :year %>
+      <%= f.input :artist, :collection => Artist.all %>
+      <%= f.input :price %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>
