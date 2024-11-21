@@ -18,7 +18,6 @@ User.destroy_all
 
 
 # user
-puts "create users"
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1732205716/nora_profile_lykcsp.jpg").open
 toto = User.new(email: "toto@toto.com", name: "toto", password: "pass1234toto")
 toto.photo.attach(io: file, filename: "nora.jpg", content_type: "image/jpg")

@@ -6,6 +6,7 @@
     <% else %>
       <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
     <% end  %>
+
     <h1><%= current_user.name %></h1>
   </div>
 
@@ -18,7 +19,7 @@
     </div>
 
     <div class="lightpink_link">
-      <%= link_to "My arwork for rent", owner_arts_path, class: "profile_link_txt" %>
+      <%= link_to "My artwork for rent", owner_arts_path, class: "profile_link_txt" %>
       <p class="profile_link_arrow">▶</p>
     </div>
 
