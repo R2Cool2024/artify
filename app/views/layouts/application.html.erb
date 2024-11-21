@@ -29,25 +29,18 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <div class="app-container">
-      <header>
+      <header class="fixed-header">
         <%= render "layouts/navbar" %>
       </header>
-    </div>
-
-
-    <div class="app-container">
+    <div class="content-wrap">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
-
-    <div class="app-container">
-      <footer>
+      <footer class="fixed-footer">
         <%= render "layouts/footer" %>
       </footer>
-    </div>
-
+      </div>
   </body>
 </html>
