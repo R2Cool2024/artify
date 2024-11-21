@@ -9,12 +9,18 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "arts#index"
 
+  resources :bookings, only: ["index"]
+
   resources :arts, only: ["index", "show", "new", "create"] do
     resources :bookings, only: ["create"]
   end
 
+  resources :bookings, only: ["index"]
+  
+
   namespace :owner do
     resources :bookings, only: ["index"]
+    resources :arts, only: ["index"]
   end
 
   resources :users, only: ["show"]
