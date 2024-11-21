@@ -3,4 +3,18 @@ class Owner::BookingsController < ApplicationController
     # vérifier synthaxe de where dans le cours
     @bookings = Booking.where(user: current_user)
   end
+
+  def updateDecline
+    @booking = Booking.find(params[:id])
+    @booking.status = Booking::STATUS[1]
+    @booking.save!
+    redirect_to owner_bookings_path
+  end
+
+  def updateConfirm
+    @booking = Booking.find(params[:id])
+    @booking.status = Booking::STATUS[2]
+    @booking.save!
+    redirect_to owner_bookings_path
+  end
 end

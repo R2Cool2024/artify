@@ -15,8 +15,13 @@ Rails.application.routes.draw do
     resources :bookings, only: ["create"]
   end
 
+  resources :bookings, only: ["index"]
+
+
   namespace :owner do
     resources :bookings, only: ["index"]
+    patch "bookings/:id/confirm", to: "bookings#updateConfirm", as: "update_booking_confirm"
+    patch "bookings/:id/decline", to: "bookings#updateDecline", as: "update_booking_decline"
     resources :arts, only: ["index"]
   end
 
