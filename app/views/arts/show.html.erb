@@ -23,19 +23,21 @@
     </div>
   </div>
 
-  <div class="col-6 d-flex flex-column">
+  <div class="col-6 d-flex flex-column" data-controller="totalprice" data-totalprice-priceperday-value="<%= @art.price %>">
     <%= simple_form_for [@art, @booking] do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-    <%# <div class="calendar" data-controller="datepicker">
-    </div> %>
+      <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" }, "data-target": "totalprice.startdate", "data-action": "input->totalprice#updateTotalPrice" } %>
+      <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" }, "data-target": "totalprice.enddate", "data-action": "input->totalprice#updateTotalPrice" } %>
       <div class="line-info d-inline-flex">
       <p>Price per day: </p>
-      <p><%= @art.price%></p>
+      <p><%= @art.price %></p>
     </div>
       <div class="line-info d-inline-flex">
       <p>Total price for the rental period: </p>
-      <p><%= @art.price%></p>
+      <% if :start_date.present? && :end_date.present? %>
+        <p data-totalprice-target="totalprice"></p>
+      <% else %>
+        <p>0 €</p>
+      <% end %>
     </div>
       <div class="line-info d-inline-flex">
       <p>Insurance: </p>
@@ -48,4 +50,3 @@
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>
-

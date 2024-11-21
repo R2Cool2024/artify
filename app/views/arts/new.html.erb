@@ -6,18 +6,23 @@
 
   <div id="art-new-form" class="form col-12 col-md-8 ">
     <%= simple_form_for(@art, data: { controller: "character-count" }) do |f| %>
-      <%= f.input :name, label: "Name (Min. 2 char.)" %>
-      <%= f.input :category, :collection => ["painting", "photography", "ceramic", "statue", "tapestry"] %>
-      <%= f.input :description, label: "Description (Min. 10 char.)", input_html: { data_character_count_target: "text", data_action: "keyup->character-count#updateCounter" } %>
-      <%# <div
+      <%= f.input :name, label: "Name (Min. 2 char. , Max. 30 char.)", placeholder: "What is the name of your artwork", input_html: { "data-target": "character-count.textName", "data-action": "keyup->character-count#updateCounterName" } %>
+      <p
+          id="counter"
+          class="m-2 p-1 b-1"
+          data-character-count-target="counterName"
+        ></p>
+      <%= f.input :category, label: "Category", :collection => Art::CATEGORY, prompt: "Choose a category" %>
+      <%= f.input :description, label: "Description (Min. 10 char. , Max. 1000 char.)", placeholder: "Write a short description of your artwork", input_html: { "data-target": "character-count.text", "data-action": "keyup->character-count#updateCounter" } %>
+      <p
           id="counter"
           class="m-2 p-1 b-1"
           data-character-count-target="counter"
-        ></div %>
-      <%= f.input :year %>
-      <%= f.input :artist, :collection => Artist.all %>
-      <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
+        ></p>
+      <%= f.input :year, label: "Year", placeholder: "What is the date of your artwork" %>
+      <%= f.input :artist, :collection => Artist.all, prompt: "Choose a category" %>
+      <%= f.input :price, label: "Price per day", placeholder: "What is the price" %>
+      <%= f.input :photo, label: "Photo", as: :file %>
       <%= f.submit %>
     <% end %>
   </div>

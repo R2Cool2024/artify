@@ -1,27 +1,24 @@
-
-<%# d-inline-flex justify-content-between %>
 <div class="user-show-content">
 
   <div class="user-profile col-5">
     <% if current_user.photo.attached? %>
       <%= cl_image_tag current_user.key, crop: :fill, class: "user-profile-picture" %>
     <% else %>
-      <%= image_tag "icone_profil.png", alt: "profil-picture", class: "user-profile-picture" %>
+      <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
     <% end  %>
-    <%# add current_user.name %>
-    <h1>User Name</h1>
+    <h1>current_user.name</h1>
   </div>
 
 
   <div class="col-7 gap-5">
 
     <div class="lightgreen_link">
-        <%= link_to "My bookings", root_path, class: "profile_link_txt" %>
+        <%= link_to "My bookings", bookings_path, class: "profile_link_txt" %>
         <p class="profile_link_arrow">▶</p>
     </div>
 
     <div class="lightpink_link">
-      <%= link_to "My arwork for rent", root_path, class: "profile_link_txt" %>
+      <%= link_to "My arwork for rent", owner_arts_path, class: "profile_link_txt" %>
       <p class="profile_link_arrow">▶</p>
     </div>
 
@@ -31,9 +28,8 @@
     </div>
 
     <div class="lightpink_link">
-      <%= link_to "Manage rental requests", root_path, class: "profile_link_txt" %>
+      <%= link_to "Manage rental requests", owner_bookings_path, class: "profile_link_txt" %>
       <p class="profile_link_arrow">▶</p>
     </div>
-
   </div>
 </div>
