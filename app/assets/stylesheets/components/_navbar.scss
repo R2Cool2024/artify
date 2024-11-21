@@ -3,14 +3,18 @@
   background: white;
   align-items: center;
   display: flex;
+  height: 50px;
   padding: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
   display: flex;
-  justify-content: flex-end
+  align-items: center;
+  flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
+  display: flex;
+  align-items: center;
   width: 80px;
 }

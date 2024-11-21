@@ -22,25 +22,23 @@
     </script>
 
   </head>
-
-
-<body class="<%= controller_name %> <%= action_name %>">
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <header>
-      <%= render "layouts/navbar" %>
-    </header>
-
-    <div class="main-container">
-      <%= yield %>
+ 
+  <body class="<%= controller_name %> <%= action_name %>">
+     <div class="app-container">
+        <header class="fixed-header">
+          <%= render "layouts/navbar" %>
+        </header>
+        <div class="content-wrap">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <div class="main-container">
+            <%= yield %>
+          </div>
+        </div>
+        <footer class="fixed-footer">
+          <%= render "layouts/footer" %>
+        </footer>
     </div>
-
-    <footer>
-      <%= render "layouts/footer" %>
-    </footer>
-
   </body>
 
 </html>
