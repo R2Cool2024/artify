@@ -2,11 +2,11 @@
 
   <div class="user-profile col-5">
     <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.key, crop: :fill, class: "user-profile-picture" %>
+      <%= cl_image_tag current_user.photo.key, crop: :fill, class: "user-profile-picture" %>
     <% else %>
       <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
     <% end  %>
-    <h1>current_user.name</h1>
+    <h1><%= current_user.name %></h1>
   </div>
 
 
