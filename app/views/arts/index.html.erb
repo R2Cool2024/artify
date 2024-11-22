@@ -1,5 +1,19 @@
-
 <div class="all-card row gap-3 p-20">
+  <div class="main-search-tab">
+    <%= form_with url: arts_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword",
+              id: "search-tab"
+          %>
+        <%= submit_tag "Search", name: "", id: "btn-search" %>
+      <%# <div class="sub-search-tab"> %>
+        <%# <%= collection_select(:category, Art::CATEGORY, prompt: true) %>
+        <%# <%= f.collection_select :score_id, Score.all, :id, :name %>
+      <%# </div> %>
+    <% end %>
+  </div>
 
   <% @arts.each do |art| %>
     <%= render "arts/card_art", art: art  %>

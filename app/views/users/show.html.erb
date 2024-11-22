@@ -1,16 +1,22 @@
+
 <div class="user-show-content">
 
-  <div class="user-profile col-5">
-    <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.key, crop: :fill, class: "user-profile-picture" %>
-    <% else %>
-      <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
-    <% end  %>
-    <h1>current_user.name</h1>
-  </div>
+      <div class="user-profile col-5">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, crop: :fill, class: "user-profile-picture" %>
+        <% else %>
+          <%= image_tag "profil.png", alt: "profil-picture", class: "user-profile-picture" %>
+        <% end  %>
 
+        <h1 class="user-txt-info"><%= current_user.name %></h1>
 
-  <div class="col-7 gap-5">
+        <h5 class="user-txt-info"><i class="fa-regular fa-envelope" style="color: #1A4944;"></i> <%= current_user.email %></h5>
+        <p class="bp-user-modif">Change my email</p>
+        <h5 class="user-txt-info"><i class="fa-solid fa-lock" style="color: #1A4944;"></i> ********</h5>
+        <p class="bp-user-modif">Change my password</p>
+      </div>
+
+  <div class="col-7">
 
     <div class="lightgreen_link">
         <%= link_to "My bookings", bookings_path, class: "profile_link_txt" %>
@@ -18,7 +24,7 @@
     </div>
 
     <div class="lightpink_link">
-      <%= link_to "My arwork for rent", owner_arts_path, class: "profile_link_txt" %>
+      <%= link_to "My artwork for rent", owner_arts_path, class: "profile_link_txt" %>
       <p class="profile_link_arrow">▶</p>
     </div>
 

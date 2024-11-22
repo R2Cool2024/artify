@@ -14,10 +14,11 @@
 
 // Sélectionne le container principal des pages (ne comprend ni la navbar, ni le footer)
 .main-container {
-  padding-left: 20px;
-  padding-right: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 80px;
+  padding-bottom: 35px;
   font-family: $body-font;
 
   h1 {
@@ -44,21 +45,17 @@ body {
 }
 
 .content-wrap {
-  padding-bottom: 20px;
-  flex: 1 0 auto
+  // padding-bottom: 20px;
 }
 
 .footer {
-  position: fixed;
-  flex-shrink: 0;
+  position: sticky;
   bottom: 0;
-  left: 0;
-  right: 0;
   background-color: #1a4944;
   color: #adff50;
   padding: 10px;
   text-align: center;
-  height: 60px;
+  width: 100%;
   justify-content: space-between;
 }
 

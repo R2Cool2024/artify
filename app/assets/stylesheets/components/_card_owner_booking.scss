@@ -1,0 +1,93 @@
+.card-owner-booking {
+  overflow: hidden;
+
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px $grey;
+  border: 1px solid $light-grey;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.card-owner-booking-img {
+  width: 250px;
+  background-position: center;
+  background-size: cover;
+}
+
+.card-owner-booking-details {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  width: 100%;
+}
+
+.card-owner-booking-content-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 15px;
+  p{
+    font-size: 15px;
+  }
+}
+
+.card-owner-booking-content-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+
+  h2 {
+    color: $dark-green;
+  }
+}
+
+.card-owner-booking-content-1-user {
+  display: flex;
+  justify-content: left;
+  padding: 0;
+  margin-bottom: 15px;
+
+  .card-owner-content-art-picture {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  p{
+    margin: 0px;
+    padding-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+
+.card-owner-booking-content-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+
+  .owner-line-info {
+    justify-content: right;
+  }
+
+  .owner-content-2-status {
+    font-weight: 600;
+    color: $dark-green;
+  }
+}
+
+.owner-booking-btn-bottom {
+  display: flex;
+  justify-content: space-between;
+}

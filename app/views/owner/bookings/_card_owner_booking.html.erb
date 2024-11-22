@@ -1,50 +1,48 @@
-<div class="card-booking col-12 col-sm-3">
+<div class="card-owner-booking col-12">
 
-  <div class="card-booking-img w-150 h-150"
+  <div class="card-owner-booking-img"
         style="background-image: url(<%= booking.art.photo.attached? ? cl_image_path(booking.art.photo.key) : asset_path('icone_images.png') %>)">
   </div>
 
-  <div class="card-booking-details">
+  <div class="card-owner-booking-details">
 
-    <div class="card-booking-content">
-      <p><%= booking.art.name%></p>
-      <p>Renter:</p>
-      <div class="card-booking-content-user">
-        <% if booking.user.photo.attached? %>
-          <%= cl_image_tag @booking.user.photo.key, height: 50, width: 50, crop: :fill %>
-        <% else %>
-          <%= image_tag "profil.png", alt: "profile picture", width: 50 %>
-        <% end %>
-        <p><%= booking.user.name%></p>
+    <div class="card-owner-booking-content-top">
+
+      <div class="card-owner-booking-content-1">
+        <h2><%= booking.art.name.capitalize %></h2>
+        <p>Request from:</p>
+        <div class="card-owner-booking-content-1-user">
+          <% if booking.user.photo.attached? %>
+            <%= cl_image_tag booking.user.photo.key, class: "card-owner-content-art-picture", crop: :fill %>
+          <% else %>
+            <%= image_tag "profil.png", alt: "profile picture", class: "card-owner-content-art-picture" %>
+          <% end %>
+          <p><%= booking.user.name%></p>
+        </div>
       </div>
+
+      <div class="card-owner-booking-content-2">
+        <div class="owner-line-info owner-content-2-status d-inline-flex">
+          <p>Status:</p>
+          <p> <%= booking.status%></p>
+        </div>
+
+        <div class="owner-line-info d-inline-flex">
+          <p>from <strong><%= booking.start_date%></strong> to <strong><%= booking.end_date%></strong></p>
+        </div>
+
+        <div class="owner-line-info d-inline-flex">
+          <p><%= booking.art.price * (booking.end_date - booking.start_date).to_i %> €</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card-booking-content">
-      <div class="line-info d-inline-flex">
-        <p>Status: </p>
-        <p><%= booking.status%></p>
-      </div>
-
-      <div class="line-info d-inline-flex">
-        <p>Dates: </p>
-        <p><%= booking.start_date%> - <%= booking.end_date%></p>
-      </div>
-
-      <div class="line-info d-inline-flex">
-        <p>Total price: </p>
-        <p><%= booking.art.price * (booking.end_date - booking.start_date).to_i %> €</p>
-      </div>
+    <div class="owner-booking-btn-bottom">
+      <%= link_to "Send a message", root_path, class: 'darkgreenbtn' %>
+      <%= link_to "Decline", owner_update_booking_decline_path(booking), class: "redbtn", data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
+      <%= link_to "Confirm", owner_update_booking_confirm_path(booking), class: "lightgreenbtn", data: {turbo_method: :patch, turbo_confirm: "Are you sure?"} %>
     </div>
-
-    <%= link_to "Send a message", root_path, id: 'btn-send-msg' %>
-    <%= link_to "Confirm", root_path, id: 'btn-confirm' %>
-    <%= link_to "Declin", root_path, id: 'btn-decline' %>
-
-    <%# <%= simple_form_for(booking) do |f| %> %>
-      <%# <%= f.input :status, class:"d-none", data: { "status": "confirm"}, as: :file %> %>
-      <%# <%= f.submit %> %>
-    <%# <% end %> %>
-
   </div>
 
 </div>
