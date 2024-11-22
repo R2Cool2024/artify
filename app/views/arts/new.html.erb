@@ -1,10 +1,11 @@
 <div class="art-new-content">
 
-  <div class="art-new-title col-12 col-md-4">
-    <h1>Add a new artwork for rent</h1>
+  <div class="art-new-title col-12 col-md-3">
+    <h1>Add a new artwork</h1>
+    <h1>for rent</h1>
   </div>
 
-  <div id="art-new-form" class="form col-12 col-md-8 ">
+  <div id="art-new-form" class="form col-12 col-md-9 ">
     <%= simple_form_for(@art, data: { controller: "character-count" }) do |f| %>
       <%= f.input :name, label: "Name (Min. 2 char. , Max. 30 char.)", placeholder: "What is the name of your artwork", input_html: { "data-target": "character-count.textName", "data-action": "keyup->character-count#updateCounterName" } %>
       <p
