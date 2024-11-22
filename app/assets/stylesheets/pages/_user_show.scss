@@ -1,6 +1,9 @@
 .user-show-content {
   display: flex;
   justify-content: space-evenly;
+  align-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .user-profile {
@@ -9,6 +12,13 @@
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 5px $grey;
+  border: 1px solid $light-grey;
+  padding: 25px;
+  width: 300px;
 }
 
 .user-profile-picture {
@@ -59,4 +69,27 @@
   align-items: center;
   padding: 0px;
   margin: 0px
+}
+
+.bp-user-modif {
+  color: $grey; /* Couleur du texte */
+  text-decoration: none;
+  border: none; /* Pas de bordure */
+  border-radius: 30px; /* Coins arrondis */
+  font-size: 16px; /* Taille de police */
+  font-family: barlow;
+  margin: none;
+}
+
+.user-txt-info {
+  color: $dark-green;
+  margin: none;
+}
+
+#user-info-card {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: auto;
+  border: 1px $light-grey solid; /* Pas de bordure */
+  border-radius: 30px; /* Coins arrondis */
 }
