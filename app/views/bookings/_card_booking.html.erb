@@ -13,7 +13,7 @@
         <p>Renter:</p>
         <div class="card-booking-content-1-user">
             <% if booking.user.photo.attached? %>
-              <%= cl_image_tag @booking.user.photo.key, class: "card-content-art-picture", crop: :fill %>
+              <%= cl_image_tag booking.user.photo.key, class: "card-content-art-picture", crop: :fill %>
               <% else %>
                 <%= image_tag "profil.png", alt: "profile picture", class: "card-content-art-picture" %>
               <% end %>
