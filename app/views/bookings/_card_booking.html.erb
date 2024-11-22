@@ -12,12 +12,12 @@
         <h2><%= booking.art.name.capitalize%></h2>
         <p>Renter:</p>
         <div class="card-booking-content-1-user">
-            <% if booking.user.photo.attached? %>
-              <%= cl_image_tag booking.user.photo.key, class: "card-content-art-picture", crop: :fill %>
+            <% if booking.art.owner.photo.attached? %>
+              <%= cl_image_tag booking.art.owner.photo.key, class: "card-content-art-picture", crop: :fill %>
               <% else %>
                 <%= image_tag "profil.png", alt: "profile picture", class: "card-content-art-picture" %>
               <% end %>
-          <p><%= booking.user.name%></p>
+          <p><%= booking.art.owner.name%></p>
         </div>
       </div>
 
@@ -27,11 +27,9 @@
           <p> <%= booking.status%></p>
         </div>
         <div class="line-info d-inline-flex">
-          <p>Dates: </p>
-          <p> <%= booking.start_date%> - <%= booking.end_date%></p>
+          <p>from <strong><%= booking.start_date%></strong> to <strong><%= booking.end_date%></strong></p>
         </div>
         <div class="line-info d-inline-flex">
-          <p>Total price: </p>
           <p> <%= booking.art.price * (booking.end_date - booking.start_date).to_i %> €</p>
         </div>
       </div>
@@ -39,7 +37,7 @@
     </div>
 
     <div class="booking-btn-bottom">
-      <%= link_to "Send a message", root_path, id: 'btn-send-msg', class: 'darkgreenbtn' %>
+      <%= link_to "Send a message", root_path, class: 'darkgreenbtn' %>
     </div>
 
   </div>
