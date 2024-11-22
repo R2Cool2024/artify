@@ -101,3 +101,4 @@ puts "create bookings"
 Booking.create!(art: art_statue, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
 Booking.create!(art: art_portrait, user: toto, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
 Booking.create!(art: art_ronflex, user: toto, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
+Booking.create!(art: art_vase, user: manu, start_date: Date.today, end_date: Date.today + 4, status: "confirmed" )
