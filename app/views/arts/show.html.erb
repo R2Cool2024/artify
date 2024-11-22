@@ -45,12 +45,12 @@
 
       <div class="line-info d-inline-flex justify-content-between">
         <p>Insurance </p>
-        <p><%= @art.price * 0.66 %> €</p>
+        <p><%= (@art.price * 0.66).truncate(0) %> €</p>
       </div>
 
       <div class="line-info d-inline-flex justify-content-between">
         <p>Delivery </p>
-        <p><%= @art.price * 0.10 %> €</p>
+        <p><%= (@art.price * 0.10).truncate(0) %> €</p>
       </div>
 
     <div class="line-info line-info-total d-inline-flex justify-content-between">
