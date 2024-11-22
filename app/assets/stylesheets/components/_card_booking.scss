@@ -101,4 +101,8 @@
     font-family: barlow;
     display: block;
     width: 170px;
+
+    &:hover {
+      text-decoration: underline;
+    }
 }
