@@ -1,4 +1,6 @@
 .card-booking {
+  overflow: hidden;
+
   background: white;
   border-radius: 15px;
   box-shadow: 0 0 5px $grey;
@@ -11,6 +13,7 @@
   margin-top: 15px;
 }
 
+// div qui contient l'image en background
 .card-booking-img {
   width: 250px;
   background-position: center;
