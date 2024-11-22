@@ -24,7 +24,7 @@
       <%= f.input :artist, :collection => Artist.all, prompt: "Choose a category" %>
       <%= f.input :price, label: "Price per day", placeholder: "What is the price" %>
       <%= f.input :photo, label: "Photo", as: :file %>
-      <%= f.submit %>
+      <%= f.submit "Submit", class: "lightgreenbtn" %>
     <% end %>
   </div>
 
