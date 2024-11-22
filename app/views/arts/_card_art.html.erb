@@ -7,6 +7,11 @@
     <div class="card-art-content">
       <h3>by <%= art.artist.name %></h3>
       <h2><%= link_to art.name.capitalize, art_path(art), class: 'card-art-title' %></h2>
+
+      <div class="card-art-content-icons">
+      <i class="fa-solid fa-pen me-2" style="color: #1A4944;"></i>
+      <i class="fa-solid fa-trash" style="color: #1A4944;"></i>
+      </div>
     </div>
 
   </div>
