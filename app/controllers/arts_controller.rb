@@ -3,6 +3,14 @@ class ArtsController < ApplicationController
 
   def index
     @arts = Art.all
+    if params[:query].present?
+      sql_subquery = <<~SQL
+        arts.name @@ :query
+        OR arts.category @@ :query
+        OR artists.name  @@ :query
+      SQL
+      @arts = @arts.joins(:artist).where(sql_subquery, query: "%#{params[:query]}%")
+    end
   end
 
   def show

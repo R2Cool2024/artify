@@ -5,3 +5,30 @@
   justify-content: space-evenly;
   padding: 10px;
 }
+
+.main-search-tag {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+}
+#search-tab {
+  background-color: $light-pink;
+  color: $grey;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-left: 70px;
+  margin-right: 10px;
+}
+
+#btn-search {
+  background-color: $light-pink; /* Couleur de fond */
+  color: $black; /* Couleur du texte */
+  text-decoration: none;
+  border: none; /* Pas de bordure */
+  margin-right: 70px;
+  padding: 10px 20px; /* Espacement interne du bouton */
+  border-radius: 30px; /* Coins arrondis */
+  font-size: 16px; /* Taille de police */
+  font-family: barlow;
+}
