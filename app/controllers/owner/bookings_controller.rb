@@ -1,7 +1,7 @@
 class Owner::BookingsController < ApplicationController
   def index
     # vérifier synthaxe de where dans le cours
-    @bookings = Booking.where(user: current_user)
+    @bookings = Booking.joins(:art).where(arts: { owner: current_user })
   end
 
   def updateDecline
