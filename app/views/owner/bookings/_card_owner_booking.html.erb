@@ -10,7 +10,7 @@
 
       <div class="card-owner-booking-content-1">
         <h2><%= booking.art.name.capitalize %></h2>
-        <p>Renter:</p>
+        <p>Request from:</p>
         <div class="card-owner-booking-content-1-user">
           <% if booking.user.photo.attached? %>
             <%= cl_image_tag booking.user.photo.key, class: "card-owner-content-art-picture", crop: :fill %>

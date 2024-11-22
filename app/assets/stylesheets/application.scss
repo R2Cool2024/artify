@@ -14,6 +14,7 @@
 
 // Sélectionne le container principal des pages (ne comprend ni la navbar, ni le footer)
 .main-container {
+
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 80px;
@@ -41,23 +42,20 @@ body {
 
 .app-container {
   flex: 1 0 auto;
-  padding-bottom: 60px;
 }
 
 .content-wrap {
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 }
 
 .footer {
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  left: 0;
-  right: 0;
   background-color: #1a4944;
   color: #adff50;
   padding: 10px;
   text-align: center;
-  height: 60px;
+  width: 100%;
   justify-content: space-between;
 }
 
