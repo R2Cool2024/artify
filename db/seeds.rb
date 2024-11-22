@@ -38,29 +38,8 @@ monet = Artist.create!(name: "Monet")
 jp_dupont = Artist.create!(name: "Jean-Paul Dupont")
 mathew_momoney = Artist.create!(name: "Mathew MoMoney")
 
-# art
+# arts
 puts "create arts"
-# statue
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191302/statue_2_olycrk.jpg").open
-art_statue = Art.new(name: "statue angels", description: "statue argile", price: 700, year: 1876, category: "statue", artist: rembrandt, owner: toto)
-art_statue.photo.attach(io: file, filename: "art_statue.jpg", content_type: "image/jpg")
-art_statue.save
-
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200819/statue_picachu_qmmdal.jpg").open
-art_pikachu = Art.new(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
-art_pikachu.photo.attach(io: file, filename: "art_pikachu.jpg", content_type: "image/jpg")
-art_pikachu.save
-
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200818/statue_Salamence_ztwwpu.jpg").open
-art_salameche = Art.new(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
-art_salameche.photo.attach(io: file, filename: "art_salameche.jpg", content_type: "image/jpg")
-art_salameche.save
-
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201100/ronflex_c01wlm.jpg").open
-art_ronflex = Art.new(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
-art_ronflex.photo.attach(io: file, filename: "art_ronflex.jpg", content_type: "image/jpg")
-art_ronflex.save
-
 # peintures
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191304/pexels_steve_peinture_2_-_Copie_h2q6fs.jpg").open
@@ -95,6 +74,28 @@ file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:
 art_tapis = Art.new(name: "tapisserie rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
 art_tapis.photo.attach(io: file, filename: "art_tapis.jpg", content_type: "image/jpg")
 art_tapis.save
+
+# statue
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191302/statue_2_olycrk.jpg").open
+art_statue = Art.new(name: "statue angels", description: "statue argile", price: 700, year: 1876, category: "statue", artist: rembrandt, owner: toto)
+art_statue.photo.attach(io: file, filename: "art_statue.jpg", content_type: "image/jpg")
+art_statue.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200819/statue_picachu_qmmdal.jpg").open
+art_pikachu = Art.new(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_pikachu.photo.attach(io: file, filename: "art_pikachu.jpg", content_type: "image/jpg")
+art_pikachu.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200818/statue_Salamence_ztwwpu.jpg").open
+art_salameche = Art.new(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_salameche.photo.attach(io: file, filename: "art_salameche.jpg", content_type: "image/jpg")
+art_salameche.save
+
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201100/ronflex_c01wlm.jpg").open
+art_ronflex = Art.new(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
+art_ronflex.photo.attach(io: file, filename: "art_ronflex.jpg", content_type: "image/jpg")
+art_ronflex.save
+
 # booking
 puts "create bookings"
 Booking.create!(art: art_statue, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
