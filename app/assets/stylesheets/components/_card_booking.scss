@@ -87,3 +87,18 @@
     color: $dark-green;
   }
 }
+
+#darkgreenbtn-booking {
+    background-color: $dark-green; /* Couleur de fond bleue */
+    color: $light-pink; /* Couleur du texte */
+    text-decoration: none;
+    text-align: center;
+    border: none; /* Pas de bordure */
+    margin-right: 30px;
+    padding: 10px 20px; /* Espacement interne du bouton */
+    border-radius: 30px; /* Coins arrondis */
+    font-size: 16px; /* Taille de police */
+    font-family: barlow;
+    display: block;
+    width: 170px;
+}
