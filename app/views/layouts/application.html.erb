@@ -28,13 +28,14 @@
         <header class="fixed-header">
           <%= render "layouts/navbar" %>
         </header>
-        <div class="content-wrap">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+        <%# <div class="content-wrap"> %>
+          <%# <p class="notice"><%= notice %>
+          <%# <p class="alert"><%= alert %>
+          <%= render "shared/flashes" %>
           <div class="main-container">
             <%= yield %>
           </div>
-        </div>
+        <%# </div> %>
         <footer class="fixed-footer">
           <%= render "layouts/footer" %>
         </footer>
