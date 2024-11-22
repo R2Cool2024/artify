@@ -27,9 +27,10 @@ export default class extends Controller {
       // console.log(`endDatecalcul: ${endDay}`);
       const diffDays = Math.round(Math.abs((endDay - startDay) / oneDay));
       // console.log(`diffDays: ${diffDays}`);
-      const price = diffDays * this.priceperdayValue;
+      // price = price*nb_days + insurance + delivery
+      const price = (diffDays * this.priceperdayValue) + (0.66 * this.priceperdayValue) + (0.1 * this.priceperdayValue);
       // console.log(`price: ${price}`);
-      this.totalpriceTarget.innerText = `${price}`;
+      this.totalpriceTarget.innerText = `${price} €`;
     } else if (this.startdateTarget.value && this.enddateTarget.value  && (this.enddateTarget.value < this.startdateTarget.value)) {
       // console.log("else if")
       this.totalpriceTarget.innerText = `The end date must be after the start date`;

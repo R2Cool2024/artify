@@ -1,0 +1,38 @@
+.all-art-show {
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-form {
+  position : fixed;
+  right: 100px;
+  margin-top: 30px;
+}
+
+.art-booking-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.characteristics {
+  background-color: $light-pink;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h3 {
+    color: $dark-green;
+  }
+}
+
+.art-show-img {
+  border-radius: 20px;
+  width: 350px;
+}
+
+#art-show-description {
+  font-size: 15px;
+}

@@ -1,52 +1,69 @@
-<div class="d-flex">
+<div class="all-art-show">
   <div class="col-6">
+    <div>
     <% if @art.photo.attached? %>
-       <%= cl_image_tag @art.photo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @art.photo.key, class: "art-show-img", crop: :fill %>
     <% else %>
-      <%= image_tag "icone_images.png" %>
+      <%= image_tag "icone_images.png", class: "art-show-img" %>
     <% end %>
-    <h1><%= @art.name %></h1>
-    <p><%= @art.description %></p>
+    </div>
+
+    <h1><%= @art.name.capitalize %></h1>
+
+    <p id="art-show-description"><%= @art.description.capitalize %></p>
+
     <div class="characteristics">
-      <div class="line-info d-inline-flex">
-        <p>Category: </p>
-        <p><%= @art.category%></p>
+      <h3>Characteristics</h3>
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Category </p>
+        <p><%= @art.category.capitalize%></p>
       </div>
-      <div class="line-info d-inline-flex">
-        <p>Artist: </p>
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Artist </p>
         <p><%= @art.artist.name%></p>
       </div>
-      <div class="line-info d-inline-flex">
-        <p>Year: </p>
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Year </p>
         <p><%= @art.year%></p>
       </div>
     </div>
   </div>
 
-  <div class="col-6 d-flex flex-column" data-controller="totalprice" data-totalprice-priceperday-value="<%= @art.price %>">
+  <div class="form booking-form col-4 d-flex flex-column" data-controller="totalprice" data-totalprice-priceperday-value="<%= @art.price %>">
+    <h2>Book</h2>
+
     <%= simple_form_for [@art, @booking] do |f| %>
       <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" }, "data-target": "totalprice.startdate", "data-action": "input->totalprice#updateTotalPrice" } %>
       <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" }, "data-target": "totalprice.enddate", "data-action": "input->totalprice#updateTotalPrice" } %>
-      <div class="line-info d-inline-flex">
-      <p>Price per day: </p>
-      <p><%= @art.price %></p>
+
+    <div class="art-booking-details">
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Price per day </p>
+        <p><%= @art.price %> €</p>
+      </div>
+
+
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Insurance </p>
+        <p><%= (@art.price * 0.66).truncate(0) %> €</p>
+      </div>
+
+      <div class="line-info d-inline-flex justify-content-between">
+        <p>Delivery </p>
+        <p><%= (@art.price * 0.10).truncate(0) %> €</p>
+      </div>
+
+    <div class="line-info line-info-total d-inline-flex justify-content-between">
+        <p>Total </p>
+        <% if :start_date.present? && :end_date.present? %>
+          <p data-totalprice-target="totalprice"></p>
+        <% else %>
+          <p>0 €</p>
+        <% end %>
+      </div>
     </div>
-      <div class="line-info d-inline-flex">
-      <p>Total price for the rental period: </p>
-      <% if :start_date.present? && :end_date.present? %>
-        <p data-totalprice-target="totalprice"></p>
-      <% else %>
-        <p>0 €</p>
-      <% end %>
-    </div>
-      <div class="line-info d-inline-flex">
-      <p>Insurance: </p>
-      <p><%= (@art.price * 0.66).truncate(0) %></p>
-    </div>
-      <div class="line-info d-inline-flex">
-      <p>Delivery: </p>
-      <p><%= (@art.price * 0.10).truncate(0) %></p>
-    </div>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+
+    <%= f.submit "Confirm", class: "lightgreenbtn d-flex justify-content-center" %>
+
   <% end %>
 </div>
