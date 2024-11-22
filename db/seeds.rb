@@ -65,7 +65,7 @@ art_vase.save
 # photo
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200820/nature_humaine_srdwcc.png").open
-art_portrait = Art.new(name: "Nature humaine", description: "Autoportrait contemporain groupe partial developpeurs fous 30X21", price: 400, year: 2024, category: "photography", artist: mathew_momoney, owner: toto)
+art_portrait = Art.new(name: "Nature humaine", description: "Autoportrait contemporain groupe partial developpeurs fous 30X21", price: 400, year: 2024, category: "photography", artist: mathew_momoney, owner: manu)
 art_portrait.photo.attach(io: file, filename: "art_portrait.jpg", content_type: "image/jpg")
 art_portrait.save
 # tapisserie
@@ -99,5 +99,5 @@ art_ronflex.save
 # booking
 puts "create bookings"
 Booking.create!(art: art_statue, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
-Booking.create!(art: art_paysage, user: manu, start_date: Date.today, end_date: Date.today + 2, status: "pending" )
+Booking.create!(art: art_portrait, user: toto, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
 Booking.create!(art: art_ronflex, user: toto, start_date: Date.today, end_date: Date.today + 2, status: "confirmed" )
