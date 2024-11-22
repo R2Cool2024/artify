@@ -71,7 +71,7 @@ art_portrait.save
 # tapisserie
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732190818/oladimeji_odunsi_photo_n9z0qf.jpg").open
-art_tapis = Art.new(name: "tapisserie rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
+art_tapis = Art.new(name: "Rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
 art_tapis.photo.attach(io: file, filename: "art_tapis.jpg", content_type: "image/jpg")
 art_tapis.save
 
