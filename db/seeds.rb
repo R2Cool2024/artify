@@ -18,15 +18,15 @@ User.destroy_all
 
 
 # user
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1732205716/nora_profile_lykcsp.jpg").open
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/v1732205716/nora_profile_lykcsp.jpg").open
 toto = User.new(email: "toto@toto.com", name: "toto", password: "pass1234toto")
 toto.photo.attach(io: file, filename: "nora.jpg", content_type: "image/jpg")
-toto.save
+toto.save!
 
-file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1732205347/camille_q5cbjy.jpg").open
+file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/v1733312689/development/9j4y4ufqp49k3xcfmqvm39b8qeqi.jpg").open
 manu = User.new(email: "manu@manu.com", name: "manu", password: "pass1234manu")
 manu.photo.attach(io: file, filename: "manue.jpg", content_type: "image/jpg")
-manu.save
+manu.save!
 
 # artists
 puts "create artists"
@@ -45,56 +45,56 @@ puts "create arts"
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191304/pexels_steve_peinture_2_-_Copie_h2q6fs.jpg").open
 art_fleur = Art.new(name: "peinture fleur", description: "fleurs toile gouache 40X30", price: 50, year: 1876, category: "painting", artist: picasso, owner: toto)
 art_fleur.photo.attach(io: file, filename: "art_fleur.jpg", content_type: "image/jpg")
-art_fleur.save
+art_fleur.save!
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/v1732190817/aaron_burden_photo_ndk6l3.jpg").open
 art_paysage = Art.new(name: "peinture paysage", description: "paysage toile huile 40X30", price: 100, year: 1876, category: "painting", artist: rembrandt, owner: toto)
 art_paysage.photo.attach(io: file, filename: "art_paysage.jpg", content_type: "image/jpg")
-art_paysage.save
+art_paysage.save!
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191303/pexels_steve_peinture_yfzwmc.jpg").open
 art_maison = Art.new(name: "peinture maison", description: "maisons toile gouache 40X30", price: 55, year: "1913", category: "painting", artist: monet, owner: manu)
 art_maison.photo.attach(io: file, filename: "art_maison.jpg", content_type: "image/jpg")
-art_maison.save
+art_maison.save!
 # ceramique
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201348/ceramique_raku_f968lz.jpg").open
 art_vase = Art.new(name: "vase ceramique", description: "vase ceramique peint", price: 75,  year: 1876, category: "ceramic", artist: rembrandt, owner: toto)
 art_vase.photo.attach(io: file, filename: "art_vase.jpg", content_type: "image/jpg")
-art_vase.save
+art_vase.save!
 # photo
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200820/nature_humaine_srdwcc.png").open
 art_portrait = Art.new(name: "Nature humaine", description: "Autoportrait contemporain groupe partial developpeurs fous 30X21", price: 400, year: 2024, category: "photography", artist: mathew_momoney, owner: manu)
 art_portrait.photo.attach(io: file, filename: "art_portrait.jpg", content_type: "image/jpg")
-art_portrait.save
+art_portrait.save!
 # tapisserie
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732190818/oladimeji_odunsi_photo_n9z0qf.jpg").open
 art_tapis = Art.new(name: "Rêve bleu", description: "tapisserie moderne en pur coton bio 100x50 encadrée", price: 101, year: 2023, category: "tapestry", artist: jp_dupont, owner: toto)
 art_tapis.photo.attach(io: file, filename: "art_tapis.jpg", content_type: "image/jpg")
-art_tapis.save
+art_tapis.save!
 
 # statue
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732191302/statue_2_olycrk.jpg").open
 art_statue = Art.new(name: "statue angels", description: "statue argile", price: 700, year: 1876, category: "statue", artist: rembrandt, owner: toto)
 art_statue.photo.attach(io: file, filename: "art_statue.jpg", content_type: "image/jpg")
-art_statue.save
+art_statue.save!
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200819/statue_picachu_qmmdal.jpg").open
 art_pikachu = Art.new(name: "pikachu statue", description: "pikachu argile", price: 73, year: 2016, category: "statue", artist: pokemon, owner: manu)
 art_pikachu.photo.attach(io: file, filename: "art_pikachu.jpg", content_type: "image/jpg")
-art_pikachu.save
+art_pikachu.save!
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732200818/statue_Salamence_ztwwpu.jpg").open
 art_salameche = Art.new(name: "salameche statue", description: "salameche argile", price: 71, year: 2016, category: "statue", artist: pokemon, owner: manu)
 art_salameche.photo.attach(io: file, filename: "art_salameche.jpg", content_type: "image/jpg")
-art_salameche.save
+art_salameche.save!
 
 file = URI.parse("https://res.cloudinary.com/dnm2n1iid/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1732201100/ronflex_c01wlm.jpg").open
 art_ronflex = Art.new(name: "ronflex statue", description: "ronflex argile", price: 72, year: 2016, category: "statue", artist: pokemon, owner: manu)
 art_ronflex.photo.attach(io: file, filename: "art_ronflex.jpg", content_type: "image/jpg")
-art_ronflex.save
+art_ronflex.save!
 
 # booking
 puts "create bookings"
